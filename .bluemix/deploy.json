@@ -1,11 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Sample Deploy Stage",
+    "title": "Michael Flores Sample Deploy Stage",
     "localized-struct":{
         "$ref": "deploy-localized-struct.json"
     },
-    "description": "sample toolchain",
-    "longDescription": "The Delivery Pipeline automates continuous deployment.",
+    "description": "Michael Flores' sample toolchain",
+    "longDescription": "This Delivery Pipeline automates continuous deployment.",
     "type": "object",
     "properties": {
         "prod-region": {

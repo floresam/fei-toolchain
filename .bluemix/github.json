@@ -5,14 +5,14 @@
     "longDescription": "TEST GitHub Service allows you to create or use an existing GitHub repository to store your source code.",
     "type": "object",
     "properties": {
-        "hello-world-repo_name": {
+        "repo_name": {
             "type": "string"
         },
-        "hello-world-repo_url": {
+        "repo_url": {
             "type": "string"
         }
     },
-    "required": ["hello-world-repo_name", "hello-world-repo_url"],
+    "required": ["repo_name", "repo_url"],
     "form": [
       {
         "type": "validator",
@@ -37,7 +37,7 @@
             },
             {
               "type": "text",
-              "key": "hello-world-repo_url"
+              "key": "repo_url"
             },
             {
               "type": "icon",
@@ -45,7 +45,7 @@
             },
             {
               "type": "text",
-              "key": "hello-world-repo_name"
+              "key": "repo_name"
             }
         ]
       }

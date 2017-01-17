@@ -33,7 +33,7 @@ jar-source-repo:
     has_issues: false
 java-container-repo:
   schema: github.json
-  service-category: githubpublic
+  service-id: githubpublic
   parameters:
     repo_name: "java-container-{{name}}"
     repo_url: https://github.com/floresam/java-container

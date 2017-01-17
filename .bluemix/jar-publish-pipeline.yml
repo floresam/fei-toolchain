@@ -1,0 +1,28 @@
+---
+stages:
+- name: Publish JAR to Nexus
+  inputs:
+  - type: git
+    branch: master
+    service: ${JAR_REPO}
+  triggers:
+  - type: commit
+  properties:
+  - name: nexus_user
+    value: deployment
+    type: text
+  - name: nexus_password
+    type: secure
+  - name: nexus_ip
+    value: http://169.47.34.99:8081
+    type: text
+  jobs:
+  - name: Build
+    type: builder
+    artifact_dir: ''
+    build_type: maven
+    script: |-
+      #!/bin/bash
+
+      #mvn deploy:deploy-file -DgroupId=com.floresam -DartifactId=testjar -Dversion=1.0.4 -Dpackaging=jar -DrepositoryId=nexus -Durl=$nexus_ip/nexus/content/repositories/releases -Dfile=todolist-1.0.jar -s settings.xml
+      mvn deploy:deploy-file -DgroupId=com.floresam -DartifactId=custom-log4j -Dversion=1.0.0 -Dpackaging=jar -DrepositoryId=nexus -Durl=$nexus_ip/nexus/content/repositories/releases -Dfile=log4j-1.2.17.jar -DgeneratePom=true -s settings.xml

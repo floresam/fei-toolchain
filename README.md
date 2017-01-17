@@ -1,6 +1,6 @@
-#Simple Cloud Foundry toolchain
+#Docker Compose
 
-This Hello World application uses Node.js and includes a DevOps toolchain that is preconfigured for continuous delivery, source control, issue tracking, and online editing.
+This Docker application uses Node.js and includes a DevOps toolchain that is preconfigured for continuous delivery, source control, issue tracking, and online editing.
 
 To get started, click **Create toolchain**.
 

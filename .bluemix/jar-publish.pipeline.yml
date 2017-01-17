@@ -4,7 +4,7 @@ stages:
   inputs:
   - type: git
     branch: master
-    service: ${JAR_REPO}
+    service: ${HELLO_WORLD_REPO}
   triggers:
   - type: commit
   jobs:
@@ -25,7 +25,7 @@ stages:
     value: undefined
     type: text
   jobs:
-  - name: Blue-Green Deploy
+  - name: Deploy
     type: deployer
     target:
       region_id: ${PROD_REGION_ID}
@@ -35,28 +35,8 @@ stages:
     script: |
       #!/bin/bash
       # Push app
-      if ! cf app $CF_APP; then  
-        cf push $CF_APP
-      else
-        OLD_CF_APP=${CF_APP}-OLD-$(date +"%s")
-        rollback() {
-          set +e  
-          if cf app $OLD_CF_APP; then
-            cf logs $CF_APP --recent
-            cf delete $CF_APP -f
-            cf rename $OLD_CF_APP $CF_APP
-          fi
-          exit 1
-        }
-        set -e
-        trap rollback ERR
-        cf rename $CF_APP $OLD_CF_APP
-        cf push $CF_APP
-        cf delete $OLD_CF_APP -f
-      fi
-      # Export app name and URL for use in later Pipeline jobs
       export CF_APP_NAME="$CF_APP"
+      cf push "${CF_APP_NAME}"
       export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
       # View logs
-      #cf logs "${CF_APP}" --recent
-      
+      #cf logs "${CF_APP_NAME}" --recent

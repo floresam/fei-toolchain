@@ -1,11 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Michael Flores Sample Deploy Stage",
-    "localized-struct":{
-        "$ref": "deploy-localized-struct.json"
-    },
-    "description": "Michael Flores' sample toolchain",
-    "longDescription": "This Delivery Pipeline automates continuous deployment.",
+    "title": "Hello World Deploy Stage",
+    "description": "hello-world simple toolchain",
+    "longDescription": "The Delivery Pipeline for Devops Services allows you to automate your continuous deployment setup hello-world.",
     "type": "object",
     "properties": {
         "prod-region": {
@@ -20,12 +17,12 @@
             "description": "The bluemix space",
             "type": "string"
         },
-       "prod-app-name": {
-            "description": "The name of your Hello World app",
+       "hello-world-name": {
+            "description": "hello world app name",
             "type": "string"
         }
     },
-    "required": ["prod-region", "prod-organization", "prod-space", "prod-app-name"],
+    "required": ["prod-region", "prod-organization", "prod-space", "hello-world-name"],
     "form": [
        {
           "type": "validator",
@@ -34,8 +31,8 @@
         {
           "type": "text",
           "readonly": false,
-          "title": "App name",
-          "key": "prod-app-name"
+          "title": "Hello World App Name",
+          "key": "hello-world-name"
         },
         {
             "type": "table",
@@ -60,7 +57,7 @@
                 },
                 {
                   "type": "label",
-                  "title": "Production stage"
+                  "title": "Prod Stage"
                 },
                 {
                   "type": "select",

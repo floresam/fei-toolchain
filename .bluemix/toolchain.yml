@@ -32,7 +32,6 @@ jar-source-repo:
     type: clone
     has_issues: false
 java-container-repo:
-  schema: github.json
   service-id: githubpublic
   parameters:
     repo_name: "java-container-{{name}}"

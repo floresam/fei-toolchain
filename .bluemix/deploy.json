@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Hello World Deploy Stage",
     "description": "hello-world simple toolchain",
-    "longDescription": "TEST The Delivery Pipeline for Devops Services allows you to automate your continuous deployment setup hello-world.",
+    "longDescription": "HIDDEN TEST The Delivery Pipeline for Devops Services allows you to automate your continuous deployment setup hello-world.",
     "type": "object",
     "properties": {
         "prod-region": {

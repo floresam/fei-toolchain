@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Hello World Deploy Stage",
-    "description": "hello-world simple toolchain",
+    "title": "Publish 3rd Party Jar Stage",
+    "description": "Toolchain to pubhlish a 3rd party JAR",
     "longDescription": "The 3rd Party JAR Publish Delivery Pipeline allows you to automatically publish 3rd party artifacts into your nexus repoistory.",
     "type": "object",
     "properties": {
@@ -24,6 +24,12 @@
           "type": "validator",
           "url": "/devops/setup/bm-helper/helper.html"
        },        
+       {
+           "type": "text",
+           "readonly": false,
+           "title": "Publish Pipeline name",
+           "key": "jar-publish-name"
+       },
         {
             "type": "table",
             "columnCount": 4,
@@ -39,8 +45,7 @@
                 },
                 {
                   "type": "label",
-                  "title": "Password"
-                },
+                  "title": "Password" },
                 {
                   "type": "label",
                   "title": "IP Address"

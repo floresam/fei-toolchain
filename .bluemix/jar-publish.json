@@ -20,10 +20,6 @@
     },
     "required": ["nexus-user", "nexus-pass", "nexus-ip"],
     "form": [
-       {
-          "type": "validator",
-          "url": "/devops/setup/bm-helper/helper.html"
-       },        
         {
             "type": "table",
             "columnCount": 4,
@@ -54,7 +50,7 @@
                   "key": "nexus-user"
                 },
                 {
-                  "type": "secure",
+                  "type": "text",
                   "key": "nexus-pass"
                 },
                 {

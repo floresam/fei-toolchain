@@ -64,17 +64,16 @@ jar-publish:
     name: "Publish-3rd-Party-JAR-{{name}}"
     ui-pipeline: true
     configuration: 
-     content: $file(hello-world.pipeline.yml)
+     content: $file(publish-3rd-party.pipeline.yml)
      env:
-      HELLO_WORLD_REPO: "hello-world-repo"
-      CF_APP_NAME: "{{deploy.parameters.hello-world-name}}"
-      PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
-      PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
-      PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
+      JAR_REPO: "jar-repo"
+      NEXUS_USER: "NEXUS_USER"
+      NEXUS_PASSWORD: "NEXUS_PASSWORD"
+      NEXUS_IP: "NEXUS_IP"
     # Should the pipeline execute on creation? can be "true" or "false"
      execute: false
     # What other toolchain services should this pipeline reference?
-    services: ["hello-world-repo"]
+    services: ["jar-repo"]
     
 #Deployment
 #deploy:

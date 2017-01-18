@@ -1,0 +1,27 @@
+---
+stages:
+- name: Publish Jar to Nexus
+  inputs:
+  - type: git
+    branch: master
+    service: ${JAR_REPO}
+  triggers:
+  - type: commit
+  properties:
+  - name: nexus_user
+    value: ${NEXUS_USER}
+    type: text
+  - name: ${NEXUS_PASS}
+    type: secure
+  - name: nexus_ip
+    value: http://${NEXUS_IP}
+    type: text
+  jobs:
+  - name: Build
+    type: builder
+    artifact_dir: ''
+    build_type: maven
+    script: |-
+      #!/bin/bash
+
+      mvn deploy:deploy-file -DgroupId=com.floresam -DartifactId=custom-log4j -Dversion=1.0.0 -Dpackaging=jar -DrepositoryId=nexus -Durl=$nexus_ip/nexus/content/repositories/releases -Dfile=log4j-1.2.17.jar -DgeneratePom=true -s settings.xml

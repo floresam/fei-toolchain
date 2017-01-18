@@ -6,15 +6,15 @@
     "type": "object",
     "properties": {
         "nexus-user": {
-            "description": "The nexus username",
+            "description": "Your nexus username",
             "type": "string"
         },
         "nexus-pass": {
-            "description": "The nexus password",
+            "description": "Your nexus password",
             "type": "secure"
         },
        "nexus-ip": {
-            "description": "The nexus repository ip address",
+            "description": "Your nexus repository ip address",
             "type": "string"
         }
     },

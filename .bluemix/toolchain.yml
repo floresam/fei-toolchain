@@ -75,7 +75,6 @@ jar-publish:
      execute: false
     # What other toolchain services should this pipeline reference?
     services: ["hello-world-repo"]
-  hidden: [form, description]
     
 #Deployment
 deploy:

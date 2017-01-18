@@ -66,6 +66,7 @@ jar-publish:
      execute: false
     # What other toolchain services should this pipeline reference?
     services: ["jar-repo"]
+  hidden: [form, description]
     
 #Deployment
 deploy:

@@ -11,7 +11,7 @@ stages:
   - name: nexus_user
     value: ${NEXUS_USER}
     type: text
-  - name: ${NEXUS_PASS}
+  - name: nexus_password
     type: secure
   - name: nexus_ip
     value: http://${NEXUS_IP}

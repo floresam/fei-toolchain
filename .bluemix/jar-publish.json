@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Hello World Deploy Stage",
+    "description": "hello-world simple toolchain",
+    "longDescription": "The 3rd Party JAR Publish Delivery Pipeline allows you to automatically publish 3rd party artifacts into your nexus repoistory.",
+    "type": "object",
+    "properties": {
+        "nexus-user": {
+            "description": "The nexus username",
+            "type": "string"
+        },
+        "nexus-pass": {
+            "description": "The nexus password",
+            "type": "secure"
+        },
+       "nexus-ip": {
+            "description": "The nexus repository ip address",
+            "type": "string"
+        }
+    },
+    "required": ["nexus-user", "nexus-pass", "nexus-ip"],
+    "form": [
+       {
+          "type": "validator",
+          "url": "/devops/setup/bm-helper/helper.html"
+       },        
+        {
+            "type": "table",
+            "columnCount": 4,
+            "widths": ["15%", "28%", "28%", "28%"],
+            "items": [
+                {
+                  "type": "label",
+                  "title": "Nexus Credentials"
+                },
+                {
+                  "type": "label",
+                  "title": "Username"
+                },
+                {
+                  "type": "label",
+                  "title": "Password"
+                },
+                {
+                  "type": "label",
+                  "title": "IP Address"
+                },
+                {
+                  "type": "label",
+                  "title": ""
+                },
+                {
+                  "type": "text",
+                  "key": "nexus-user"
+                },
+                {
+                  "type": "secure",
+                  "key": "nexus-pass"
+                },
+                {
+                  "type": "text",
+                  "key": "nexus-ip"
+                }
+            ]
+        }
+    ]
+}

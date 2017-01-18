@@ -24,12 +24,6 @@
           "type": "validator",
           "url": "/devops/setup/bm-helper/helper.html"
        },        
-       {
-           "type": "text",
-           "readonly": false,
-           "title": "Publish Pipeline name",
-           "key": "jar-publish-name"
-       },
         {
             "type": "table",
             "columnCount": 4,
@@ -45,7 +39,8 @@
                 },
                 {
                   "type": "label",
-                  "title": "Password" },
+                  "title": "Password"
+                },
                 {
                   "type": "label",
                   "title": "IP Address"
